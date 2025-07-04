@@ -1,0 +1,22 @@
+Report
+
+1. First I do through all the topics which are given to us.
+2. Then opt for the topic - Movie Success Prediction and Sentiment Study.
+3. Download the dataset from Kaggle.
+4. Importing the necessary libraries.
+5. Importing the dataset.
+6. Check overview of the data.
+7. Checking shape, size, info about the data.
+8. Plotting the sentiment column values in a pie chart for visualize.
+9. Adding new column named no_of_words that counts the number of words of the review.
+10. Then plot this in a bar graph.
+11. Changing positive reviews to 1 and negative reviews to 0. 
+12. Check for duplicate values.
+13. Removing duplicate values.
+14. Adding new column named as new_word_count
+15. Analysing the data.
+16. plot in the graphs.
+17. Now applying different Machine learning algorithms to predict sentiments based on the reviews.
+18. Transform the data,
+19. Then again Train the data on algorithm.
+20. Getting accuracy score.
