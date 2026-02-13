@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dilraj Valentine 💖</title>
+
+<style>
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family: 'Arial', cursive;
+    background: linear-gradient(135deg,#ff0066,#ff3399,#9900ff);
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation: floatUp linear infinite;
+    opacity:0.8;
+}
+@keyframes floatUp{
+    0%{transform:translateY(100vh) scale(1);}
+    100%{transform:translateY(-10vh) scale(1.5);}
+}
+
+.container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    width:90%;
+}
+
+h1{
+    color:white;
+    font-size:36px;
+    text-shadow:0 0 15px #ff00ff;
+    margin-bottom:30px;
+}
+
+button{
+    padding:15px 40px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    margin:15px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+#yes{
+    background:#00ffcc;
+    box-shadow:0 0 15px #00ffcc;
+}
+
+#no{
+    background:#ff3333;
+    box-shadow:0 0 15px red;
+    position:absolute;
+}
+
+#result{
+    display:none;
+    text-align:center;
+    color:white;
+}
+
+#result h2{
+    font-size:38px;
+    text-shadow:0 0 15px yellow;
+}
+
+/* Graffiti */
+.graffiti{
+    position:absolute;
+    font-size:30px;
+    animation:spin 4s linear infinite;
+}
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+    <h1>DILRAJ, WILL YOU BE MY VALENTINE? 💖</h1>
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+</div>
+
+<div class="container" id="result">
+    <h2>I KNEW YOU LOVE ME 😘💘</h2>
+    
+    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjV3YWU1MGRpZzc3eWR0amRnaTVsczA3cnkxb2c1MWhpeHN1ZzN5ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ddHhhUBn25cuQ/giphy.gif"width="250">
+    <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" width="250">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWE1dTNhdXczanN0eHpta29ia29seDE2cGJjNjNuZTNxMXgwcDZlOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26h0pHNtHKjmDo4WQ/giphy.gif" width="250">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWE1dTNhdXczanN0eHpta29ia29seDE2cGJjNjNuZTNxMXgwcDZlOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hv14mGOF3MY7wDKPkE/giphy.gif" width="300">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWE1dTNhdXczanN0eHpta29ia29seDE2cGJjNjNuZTNxMXgwcDZlOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nSQ09bxw13UHMApANb/giphy.gif" width="250">
+    <img src="c:\Users\91917\Documents\Downloads\aac54cd2-e8ef-403e-9255-0e11573ae800.jpg" width ="300">
+</div>
+
+<script>
+// Floating hearts
+setInterval(()=>{
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML=["❤️","💖","💘","💕","💞","💓"][Math.floor(Math.random()*6)];
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(3+Math.random()*4)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),7000);
+},150);
+
+// NO button dodge
+const no=document.getElementById("no");
+no.addEventListener("mouseenter",moveNo);
+no.addEventListener("touchstart",moveNo);
+
+function moveNo(){
+    no.style.left=Math.random()*80+"vw";
+    no.style.top=Math.random()*80+"vh";
+}
+
+// YES click
+document.getElementById("yes").onclick=()=>{
+    document.getElementById("main").style.display="none";
+    document.getElementById("result").style.display="block";
+
+    // graffiti spam
+    for(let i=0;i<40;i++){
+        const g=document.createElement("div");
+        g.className="graffiti";
+        g.innerHTML="LOVE 💕";
+        g.style.left=Math.random()*100+"vw";
+        g.style.top=Math.random()*100+"vh";
+        document.body.appendChild(g);
+    }
+}
+</script>
+
+</body>
+</html>
